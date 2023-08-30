@@ -27,22 +27,27 @@
 #define STACKSIZE 2000
 
 struct k_thread coop_thread;
-K_THREAD_STACK_DEFINE(coop_stack, STACKSIZE);
+K_THREAD_STACK_DEFINE(coop_stack, STACKSIZE);	// Define a toplevel array of kernel stack memory region nammed coop_stack w memory size STACKSIZE
 int counter;
 bool led_is_on;
 
+/**
+ * @brief This funtion is dinded to the thred. The first time is called it will intialize the
+ * 		  LED1 pin and timer and from that point on will blink the LED any time the thread
+ * 		  is running. 
+*/
 void thread_entry(void)
 {
     const struct device *dev;
-    dev = device_get_binding(LED1);
+    dev = device_get_binding(LED1); // If dev is NULL we should handlle that as an error and stop excecution.
     bool led_is_on = true;
-	int ret = gpio_pin_configure(dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0);
+	int ret = gpio_pin_configure(dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0); // We should check if the pin configurations was ok, otherwise handle it and stop excecution.
 
 	struct k_timer t;
 	k_timer_init(&t, NULL, NULL);
 
 	while (1) {
-        counter = counter + 1;
+        counter = counter + 1;	// I whole prefer here: counter++;
 		gpio_pin_set(dev, PIN1, (int)led_is_on);
 		led_is_on = !led_is_on;
 		k_timer_start(&t, K_MSEC(2000), K_NO_WAIT);
@@ -58,6 +63,7 @@ void main(void)
 
 	dev = device_get_binding(LED0);
 
+	// Create and initialize a thread.
     k_thread_create(&coop_thread,
                     coop_stack,
                     STACKSIZE,
@@ -78,7 +84,7 @@ void main(void)
 		return;
 	}
 
-	while (1) {
+	while (1) { // LED0 toggles every 500 ms
 		gpio_pin_set(dev, PIN0, (int)led_is_on);
 		led_is_on = !led_is_on;
 		k_msleep(500);

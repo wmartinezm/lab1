@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "gpio.h": "c",
+        "devicetree.h": "c",
+        "device.h": "c"
+    }
+}
