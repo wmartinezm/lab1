@@ -41,7 +41,7 @@ void thread_entry(void)
     const struct device *dev;
     dev = device_get_binding(LED1); // If dev is NULL we should handlle that as an error and stop excecution.
     bool led_is_on = true;
-	int ret = gpio_pin_configure(dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0); // We should check if the pin configurations was ok, otherwise handle it and stop excecution.
+	int ret = gpio_pin_configure(dev, PIN1, GPIO_OUTPUT_ACTIVE | FLAGS0); // We should check if the pin configurations was ok, otherwise handle it and stop excecution.
 
 	struct k_timer t;
 	k_timer_init(&t, NULL, NULL);
