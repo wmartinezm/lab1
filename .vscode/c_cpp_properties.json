@@ -23,6 +23,7 @@
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/.pio/libdeps/disco_f072rb/Unity/src",
                 ""
             ],
             "browse": {
@@ -43,6 +44,7 @@
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/stm32f0xx/drivers/include/Legacy",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/stm32/stm32cube/common_ll/include",
+                    "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/.pio/libdeps/disco_f072rb/Unity/src",
                     ""
                 ]
             },
