@@ -42,17 +42,12 @@ void thread_entry(void)
     const struct device *dev;
     dev = device_get_binding(LED1); // If dev is NULL we should handlle that as an error and stop excecution.
     bool led_is_on = true;
-	// int ret = gpio_pin_configure(dev, PIN1, GPIO_OUTPUT_ACTIVE | FLAGS0); // We should check if the pin configurations was ok, otherwise handle it and stop excecution.
 	int ret = LED_SetupThread(dev, PIN1, GPIO_OUTPUT_ACTIVE | FLAGS0, &counter);
 
 	struct k_timer t;
 	k_timer_init(&t, NULL, NULL);
 
 	while (1) {
-        // counter = counter + 1;	// I whould prefer here: counter++;
-		//gpio_pin_set(dev, PIN1, (int)led_is_on);
-		//led_is_on = !led_is_on;
-		// led_is_on = LED_Toggle(dev, PIN1, led_is_on);
 		led_is_on = LED_ToggleThread(dev, PIN1, led_is_on, &counter);
 		k_timer_start(&t, K_MSEC(2000), K_NO_WAIT);
 		k_timer_status_sync(&t);
@@ -83,16 +78,12 @@ void main(void)
 		return;
 	}
 
-	// ret = gpio_pin_configure(dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0);
 	ret = LED_SetupMainloop(dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0);
 	if (ret < 0) {
 		return;
 	}
 
 	while (1) { // LED0 toggles every 500 ms
-		// gpio_pin_set(dev, PIN0, (int)led_is_on);
-		// led_is_on = !led_is_on;
-		// led_is_on = LED_Toggle(dev, PIN0, led_is_on);
 		led_is_on = LED_ToggleMainloop(dev, PIN0, led_is_on);
 		k_msleep(500);
 	}
