@@ -10,9 +10,12 @@
             "includePath": [
                 "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/include",
                 "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/src",
+                "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/lib/lab1/include",
+                "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/lib/lab1/src",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/include",
                 "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/.pio/build/disco_f072rb/zephyr/include/generated",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                "C:/Users/wlsnm/.platformio/packages/framework-zephyr/lib/libc/newlib/include",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/drivers",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
                 "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
@@ -27,9 +30,12 @@
                 "path": [
                     "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/include",
                     "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/src",
+                    "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/lib/lab1/include",
+                    "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/lib/lab1/src",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/include",
                     "D:/Master/FALL_2023/ECE-6960-AES/PlatformIO/lab1/.pio/build/disco_f072rb/zephyr/include/generated",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/soc/arm/st_stm32/stm32f0",
+                    "C:/Users/wlsnm/.platformio/packages/framework-zephyr/lib/libc/newlib/include",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/drivers",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/soc/arm/st_stm32/common",
                     "C:/Users/wlsnm/.platformio/packages/framework-zephyr/_pio/modules/hal/cmsis/CMSIS/Core/Include",
@@ -41,7 +47,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60110",
+                "PLATFORMIO=60111",
                 "STM32F072xB",
                 "BUILD_VERSION=zephyr-v20701",
                 "HSE_VALUE=8000000",
@@ -50,6 +56,7 @@
                 "USE_FULL_LL_DRIVER",
                 "USE_HAL_DRIVER",
                 "_FORTIFY_SOURCE=2",
+                "__LINUX_ERRNO_EXTENSIONS__",
                 "__PROGRAM_START",
                 "__ZEPHYR__=1",
                 ""
@@ -66,12 +73,6 @@
                 "-mthumb",
                 "-mabi=aapcs",
                 "-mfp16-format=ieee",
-                "-isystem",
-                "C:/Users/wlsnm/.platformio/packages/framework-zephyr/lib/libc/minimal/include",
-                "-isystem",
-                "c:/users/wlsnm/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include",
-                "-isystem",
-                "c:/users/wlsnm/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/8.2.1/include-fixed",
                 ""
             ]
         }
