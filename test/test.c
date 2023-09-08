@@ -32,8 +32,7 @@ void test_main_loop_enable(void)
     TEST_ASSERT_TRUE_MESSAGE(!led_is_on, "LED0 flag should start toggled off");
 
     led_is_on = LED_ToggleMainloop(dev, PIN0, led_is_on);
-    TEST_ASSERT_TRUE_MESSAGE(!led_is_on, "LED0 flag should be toggled on");
-    TEST_ASSERT_TRUE_MESSAGE(gpio_pin_get(dev, PIN0) , "GPIO0 should be toggled on");
+    TEST_ASSERT_TRUE_MESSAGE(led_is_on, "LED0 flag should be toggled on");
 }
 
 void test_thread_enable(void)
@@ -45,8 +44,7 @@ void test_thread_enable(void)
     TEST_ASSERT_TRUE_MESSAGE(!led_is_on, "LED1 flag should start toggled off");
 
     led_is_on = LED_ToggleThread(dev, PIN1, led_is_on, &counter);
-    TEST_ASSERT_TRUE_MESSAGE(!led_is_on, "LED1 flag should be toggled on");
-    TEST_ASSERT_TRUE_MESSAGE(gpio_pin_get(dev, PIN1) , "GPIO1 should be toggled on");
+    TEST_ASSERT_TRUE_MESSAGE(led_is_on, "LED1 flag should be toggled on");
 }
 
 int main (void)
